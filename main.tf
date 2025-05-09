@@ -5,7 +5,7 @@ data "aws_ami" "app_ami" {
     name   = "name"
     values = ["bitnami-tomcat-*-x86_64-hvm-ebs-nami"]
   }
-       
+         
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
@@ -54,7 +54,7 @@ resource "aws_security_group_rule" "blog_https_in" {
   cidr_blocks = ["0.0.0.0/0"]
   security_group_id = aws_security_group.blog.id
 }
-
+ 
 
 resource "aws_security_group_rule" "blog_everything_out" {
   type        = "egress"
